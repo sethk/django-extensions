@@ -66,8 +66,8 @@ The envisioned use case is something like this:
             sys.stderr.write("""-- WARNING!: https://docs.djangoproject.com/en/dev/ref/databases/#collation-settings
 -- Please read this carefully! Collation will be set to utf8_bin to have case-sensitive data.
 """)
-            print("CREATE DATABASE %s CHARACTER SET utf8 COLLATE utf8_bin;" % dbname)
-            print("GRANT ALL PRIVILEGES ON %s.* to '%s'@'%s' identified by '%s';" % (
+            print("CREATE DATABASE `%s` CHARACTER SET utf8 COLLATE utf8_bin;" % dbname)
+            print("GRANT ALL PRIVILEGES ON `%s`.* to '%s'@'%s' identified by '%s';" % (
                 dbname, dbuser, dbclient, dbpass
             ))
         elif engine in POSTGRESQL_ENGINES:
